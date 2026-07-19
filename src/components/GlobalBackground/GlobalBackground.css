@@ -1,0 +1,211 @@
+/* ================================================================
+   GlobalBackground.css
+   Premium cinematic static star-field background system.
+
+   Animation philosophy:
+   ─ Stars:      ZERO animation. No keyframes, no transitions.
+   ─ Glow orbs:  Ultra-slow CSS animations using ONLY `transform`
+                 (compositor thread, GPU only, 0 layout/paint cost).
+   ─ Reduced motion: All glow animations disabled at media query.
+   ================================================================ */
+
+/* ── Root container ──────────────────────────────────────────── */
+.gb-root {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Hide the deep-space background in light mode so the normal body background is visible */
+[data-theme='light'] .gb-root {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── Layer 1: Deep-space base gradient ───────────────────────── */
+.gb-base {
+  position: absolute;
+  inset: 0;
+  /* Deep cosmic void: near-black indigo at top, pure black at bottom */
+  background:
+    radial-gradient(ellipse 120% 70% at 50% 0%,   #0c0a1e 0%, transparent 65%),
+    radial-gradient(ellipse 80%  60% at 80% 100%,  #070612 0%, transparent 70%),
+    radial-gradient(ellipse 60%  40% at 15% 80%,   #090816 0%, transparent 60%),
+    linear-gradient(180deg, #05040f 0%, #070615 40%, #060511 70%, #040309 100%);
+}
+
+/* ── Layer 2: SVG star field ─────────────────────────────────── */
+.gb-stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* Stars painted into SVG — zero CSS animations, ever */
+  overflow: visible;
+}
+
+/* ── Layer 3: Nebula dust panels ─────────────────────────────── */
+.gb-nebula {
+  position: absolute;
+  border-radius: 50%;
+  /* Heavy blur for the painterly foggy look */
+  filter: blur(80px);
+  pointer-events: none;
+  /* No animation — these are completely static */
+}
+
+.gb-nebula-1 {
+  width: 700px;
+  height: 400px;
+  top: -80px;
+  left: -120px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(88, 56, 180, 0.08) 0%,
+    rgba(60, 40, 140, 0.04) 50%,
+    transparent 75%
+  );
+}
+
+.gb-nebula-2 {
+  width: 600px;
+  height: 500px;
+  bottom: -60px;
+  right: -80px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(180, 60, 140, 0.07) 0%,
+    rgba(140, 40, 100, 0.03) 50%,
+    transparent 75%
+  );
+}
+
+.gb-nebula-3 {
+  width: 500px;
+  height: 400px;
+  top: 45%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(20, 120, 200, 0.045) 0%,
+    rgba(10, 80, 160, 0.02)  50%,
+    transparent 75%
+  );
+}
+
+/* ── Layer 4: Ambient glow orbs ──────────────────────────────── */
+/*
+   Each orb is a blurred radial-gradient div.
+   Animation uses ONLY `transform: translate()` — never touches
+   width/height/background/opacity so it stays on the GPU compositor.
+   Durations: 48s – 80s. Imperceptibly slow at normal viewing.
+*/
+.gb-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  /* Promote to own GPU layer */
+  will-change: transform;
+  transform: translate(-50%, -50%);
+}
+
+/* Purple orb — top left, 72s cycle */
+.gb-orb-a {
+  animation: gb-drift-a 72s ease-in-out infinite;
+}
+
+/* Pink orb — bottom right, 60s cycle */
+.gb-orb-b {
+  animation: gb-drift-b 60s ease-in-out infinite;
+}
+
+/* Cyan orb — top right, 80s cycle */
+.gb-orb-c {
+  animation: gb-drift-c 80s ease-in-out infinite;
+}
+
+/* Violet orb — bottom left, 56s cycle */
+.gb-orb-d {
+  animation: gb-drift-d 56s ease-in-out infinite;
+}
+
+/* ── Glow orb keyframes ──────────────────────────────────────── */
+/* Movements are tiny (≤3% of viewport) to remain almost invisible */
+
+@keyframes gb-drift-a {
+  0%,   100% { transform: translate(-50%, -50%) translate(0px,   0px);   }
+  25%         { transform: translate(-50%, -50%) translate(18px, -12px); }
+  50%         { transform: translate(-50%, -50%) translate(30px,  10px); }
+  75%         { transform: translate(-50%, -50%) translate(-8px,  22px); }
+}
+
+@keyframes gb-drift-b {
+  0%,   100% { transform: translate(-50%, -50%) translate(0px,    0px);  }
+  33%         { transform: translate(-50%, -50%) translate(-22px, 14px); }
+  66%         { transform: translate(-50%, -50%) translate(12px, -18px); }
+}
+
+@keyframes gb-drift-c {
+  0%,   100% { transform: translate(-50%, -50%) translate(0px,   0px);   }
+  40%         { transform: translate(-50%, -50%) translate(-16px, 8px);  }
+  70%         { transform: translate(-50%, -50%) translate(20px,  18px); }
+}
+
+@keyframes gb-drift-d {
+  0%,   100% { transform: translate(-50%, -50%) translate(0px,  0px);   }
+  50%         { transform: translate(-50%, -50%) translate(14px, -20px); }
+}
+
+/* ── Layer 5: Vignette ───────────────────────────────────────── */
+.gb-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    transparent 55%,
+    rgba(2, 1, 8, 0.50) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Reduced Motion ──────────────────────────────────────────── */
+/*
+   When the user prefers reduced motion, disable ALL glow animations.
+   Stars are already static so nothing else changes.
+*/
+@media (prefers-reduced-motion: reduce) {
+  .gb-orb {
+    animation: none !important;
+  }
+}
+
+/* ── Responsive: scale blur down on small screens ────────────── */
+@media (max-width: 768px) {
+  .gb-nebula {
+    filter: blur(50px);
+  }
+  .gb-orb {
+    filter: blur(40px);
+  }
+  .gb-nebula-1 { width: 380px; height: 240px; }
+  .gb-nebula-2 { width: 320px; height: 280px; }
+  .gb-nebula-3 { width: 280px; height: 240px; }
+}
+
+@media (max-width: 480px) {
+  .gb-nebula {
+    filter: blur(36px);
+  }
+  .gb-orb {
+    filter: blur(30px);
+  }
+}

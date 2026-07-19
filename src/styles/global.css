@@ -1,0 +1,344 @@
+/* ====================================================
+   GLOBAL CSS – Design System Tokens & Base Styles
+   Mitul Padhiyar Portfolio
+   ==================================================== */
+
+/* ---------- Google Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ---------- CSS Variables – Light Theme ---------- */
+:root {
+  /* Backgrounds */
+  --bg-primary: #f8f9ff;
+  --bg-secondary: #eef0fb;
+  --bg-card: rgba(255, 255, 255, 0.6);
+  --bg-card-hover: rgba(255, 255, 255, 0.85);
+  --bg-glass: rgba(255, 255, 255, 0.45);
+  --bg-glass-border: rgba(255, 255, 255, 0.7);
+  --bg-overlay: rgba(255, 255, 255, 0.92);
+
+  /* Text */
+  --text-primary: #0d0e1a;
+  --text-secondary: #3d3f5a;
+  --text-muted: #7b7d9b;
+  --text-accent: #6c63ff;
+
+  /* Brand Gradient */
+  --gradient-primary: linear-gradient(135deg, #6c63ff 0%, #a78bfa 50%, #ec4899 100%);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #6c63ff 100%);
+  --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+  --gradient-cool: linear-gradient(135deg, #6c63ff 0%, #06b6d4 100%);
+  --gradient-text: linear-gradient(135deg, #6c63ff, #ec4899);
+
+  /* Accent Colors */
+  --accent-purple: #6c63ff;
+  --accent-pink: #ec4899;
+  --accent-cyan: #06b6d4;
+  --accent-amber: #f59e0b;
+  --accent-green: #10b981;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(108, 99, 255, 0.08);
+  --shadow-md: 0 8px 32px rgba(108, 99, 255, 0.12);
+  --shadow-lg: 0 16px 48px rgba(108, 99, 255, 0.18);
+  --shadow-xl: 0 24px 64px rgba(108, 99, 255, 0.25);
+  --shadow-glow: 0 0 20px rgba(108, 99, 255, 0.35);
+  --shadow-glow-pink: 0 0 20px rgba(236, 72, 153, 0.35);
+
+  /* Header */
+  --header-bg: rgba(248, 249, 255, 0.7);
+  --header-border: rgba(108, 99, 255, 0.15);
+  --header-shadow: 0 4px 24px rgba(108, 99, 255, 0.1);
+
+  /* Border */
+  --border-color: rgba(108, 99, 255, 0.15);
+  --border-light: rgba(108, 99, 255, 0.08);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-max: 1200px;
+  --container-padding: 0 24px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+}
+
+/* ---------- CSS Variables – Dark Theme ---------- */
+[data-theme='dark'] {
+  --bg-primary: #07080f;
+  --bg-secondary: #0d0f1e;
+  --bg-card: rgba(20, 22, 40, 0.7);
+  --bg-card-hover: rgba(28, 30, 54, 0.9);
+  --bg-glass: rgba(15, 17, 30, 0.65);
+  --bg-glass-border: rgba(108, 99, 255, 0.2);
+  --bg-overlay: rgba(7, 8, 15, 0.92);
+
+  --text-primary: #eef0ff;
+  --text-secondary: #b8bcd8;
+  --text-muted: #6b6e90;
+  --text-accent: #a78bfa;
+
+  --gradient-primary: linear-gradient(135deg, #7c6fff 0%, #b8a3ff 50%, #f472b6 100%);
+  --gradient-text: linear-gradient(135deg, #a78bfa, #f472b6);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 25px rgba(124, 111, 255, 0.4);
+  --shadow-glow-pink: 0 0 25px rgba(244, 114, 182, 0.4);
+
+  --header-bg: rgba(7, 8, 15, 0.75);
+  --header-border: rgba(124, 111, 255, 0.2);
+  --header-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+  --border-color: rgba(124, 111, 255, 0.2);
+  --border-light: rgba(124, 111, 255, 0.1);
+}
+
+/* ---------- CSS Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* In dark mode, body background is fully transparent so GlobalBackground
+   shines through the entire page without any seam between sections. */
+[data-theme='dark'] body {
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ---------- Utility Classes ---------- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+.section {
+  padding: var(--section-padding);
+  position: relative;
+  /* overflow: hidden removed — would clip the fixed GlobalBackground */
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scroll Animation Base */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.zoom-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+
+/* ---------- Section Heading Utility ---------- */
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+/* ---------- Glass Card Utility ---------- */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 3px;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(108, 99, 255, 0.25);
+  color: var(--text-primary);
+}
+
+
+/* ---------- Premium Button Base ---------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+  background: rgba(108, 99, 255, 0.05);
+}
