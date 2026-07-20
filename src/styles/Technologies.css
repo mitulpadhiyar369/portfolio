@@ -67,16 +67,16 @@
   background: var(--gradient-primary);
   opacity: 0;
   transition: opacity var(--transition-smooth);
-}
-
-.tech-card:hover {
-  transform: translateY(-8px) scale(1.01);
+}@media (hover: hover) {
+  .tech-card:hover {
+    transform: translateY(-8px) scale(1.01);
   box-shadow: var(--shadow-xl);
   border-color: var(--border-color);
-}
-
-.tech-card:hover::after {
-  opacity: 1;
+  }
+}@media (hover: hover) {
+  .tech-card:hover::after {
+    opacity: 1;
+  }
 }
 
 /* Card Header */
@@ -99,11 +99,11 @@
   flex-shrink: 0;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
   box-shadow: var(--shadow-sm);
-}
-
-.tech-card:hover .tech-icon-wrap {
-  transform: rotate(-8deg) scale(1.1);
+}@media (hover: hover) {
+  .tech-card:hover .tech-icon-wrap {
+    transform: rotate(-8deg) scale(1.1);
   box-shadow: var(--shadow-glow);
+  }
 }
 
 .tech-card-info {
@@ -243,14 +243,14 @@
   color: var(--text-secondary);
   transition: all var(--transition-smooth);
   cursor: default;
-}
-
-.future-chip:hover {
-  border-color: var(--accent-purple);
+}@media (hover: hover) {
+  .future-chip:hover {
+    border-color: var(--accent-purple);
   color: var(--accent-purple);
   background: rgba(108, 99, 255, 0.08);
   transform: translateY(-3px);
   box-shadow: var(--shadow-glow);
+  }
 }
 
 .future-chip-icon {
