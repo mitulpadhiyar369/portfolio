@@ -38,7 +38,7 @@ const Contact = () => {
           <div className="contact-socials">
             {/* Replace href values with your actual links */}
             <a
-              href="#"
+              href="https://github.com/mitulpadhiyar369"
               className="contact-social-link"
               aria-label="GitHub Profile"
               title="GitHub"
