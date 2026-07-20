@@ -10,6 +10,11 @@ import useScrollAnimation from '../../hooks/useScrollAnimation';
 const Contact = () => {
   useScrollAnimation();
 
+  const isMobile = typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const emailHref = isMobile 
+    ? 'mailto:mitulpadhiyar0369@gmail.com' 
+    : 'https://mail.google.com/mail/?view=cm&fs=1&to=mitulpadhiyar0369@gmail.com';
+
   return (
     <section id="contact" className="contact" aria-label="Contact section">
 
@@ -58,7 +63,7 @@ const Contact = () => {
               <FiLinkedin />
             </a>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=mitulpadhiyar0369@gmail.com"
+              href={emailHref}
               className="contact-social-link"
               aria-label="Email"
               title="Email"

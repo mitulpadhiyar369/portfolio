@@ -26,6 +26,11 @@ const MobileMenu = ({ isOpen, onClose, activeSection }) => {
     onClose();
   };
 
+  const isMobile = typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const emailHref = isMobile 
+    ? 'mailto:mitulpadhiyar0369@gmail.com' 
+    : 'https://mail.google.com/mail/?view=cm&fs=1&to=mitulpadhiyar0369@gmail.com';
+
   return (
     <>
       {/* Overlay */}
@@ -76,7 +81,7 @@ const MobileMenu = ({ isOpen, onClose, activeSection }) => {
             <a href="https://www.linkedin.com/in/mitul-padhiyar-92433a3a0/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
               <FiLinkedin />
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mitulpadhiyar0369@gmail.com" aria-label="Email" title="Email" target="_blank" rel="noopener noreferrer">
+            <a href={emailHref} aria-label="Email" title="Email" target="_blank" rel="noopener noreferrer">
               <FiMail />
             </a>
           </div>
