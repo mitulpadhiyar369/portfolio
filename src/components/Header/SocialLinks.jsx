@@ -5,7 +5,7 @@ import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 // Replace placeholder hrefs with your actual links
 const links = [
-  { icon: <FiGithub />, href: '#', label: 'GitHub Profile', title: 'GitHub' },
+  { icon: <FiGithub />, href: 'https://github.com/mitulpadhiyar369', label: 'GitHub Profile', title: 'GitHub' },
   { icon: <FiLinkedin />, href: 'https://www.linkedin.com/in/mitul-padhiyar-92433a3a0/', label: 'LinkedIn Profile', title: 'LinkedIn' },
   { icon: <FiMail />, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=mitulpadhiyar0369@gmail.com', label: 'Send Email', title: 'Email' },
 ];

@@ -15,8 +15,8 @@ const INFO_ITEMS = [
   {
     icon: <FiGithub />,
     label: 'GitHub',
-    value: 'My GitHub Profile',      // ← replace
-    href: '#',                          // ← replace with GitHub URL
+    value: 'mitulpadhiyar369',
+    href: 'https://github.com/mitulpadhiyar369',
   },
   {
     icon: <FiMail />,

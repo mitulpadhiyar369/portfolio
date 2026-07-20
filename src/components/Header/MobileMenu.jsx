@@ -70,7 +70,7 @@ const MobileMenu = ({ isOpen, onClose, activeSection }) => {
 
         <div className="mobile-nav-footer">
           <div className="mobile-social">
-            <a href="#" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/mitulpadhiyar369" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
               <FiGithub />
             </a>
             <a href="https://www.linkedin.com/in/mitul-padhiyar-92433a3a0/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
