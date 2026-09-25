@@ -5,16 +5,27 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi';
 const ProjectOverlay = () => {
   return (
     <div className="project-overlay" aria-hidden="true">
-      <p className="project-overlay-text">Project Details Coming Soon</p>
       <div className="project-overlay-buttons">
-        <button className="overlay-btn overlay-btn-primary" disabled aria-disabled="true" title="Live demo coming soon">
+        <a 
+          href="https://mitulpadhiyar369.github.io/portfolio/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="overlay-btn overlay-btn-primary" 
+          title="Live Demo"
+        >
           <FiExternalLink size={14} />
           Live Demo
-        </button>
-        <button className="overlay-btn overlay-btn-secondary" disabled aria-disabled="true" title="GitHub link coming soon">
+        </a>
+        <a 
+          href="https://github.com/mitulpadhiyar369" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="overlay-btn overlay-btn-secondary" 
+          title="GitHub"
+        >
           <FiGithub size={14} />
           GitHub
-        </button>
+        </a>
       </div>
     </div>
   );

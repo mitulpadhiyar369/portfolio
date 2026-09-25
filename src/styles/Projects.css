@@ -36,6 +36,12 @@
   margin-bottom: 64px;
 }
 
+.project-grid.single-layout {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto 64px auto;
+}
+
 /* ---------- Project Card ---------- */
 .project-card {
   background: var(--bg-card);
@@ -205,12 +211,18 @@
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: not-allowed;
-  opacity: 0.6;
-  transition: transform var(--transition-smooth);
+  cursor: pointer;
+  transition: transform var(--transition-smooth), opacity var(--transition-fast);
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+@media (hover: hover) {
+  .overlay-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
 }
 
 .overlay-btn-primary {

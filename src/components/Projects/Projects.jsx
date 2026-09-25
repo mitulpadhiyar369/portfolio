@@ -3,7 +3,6 @@ import React from 'react';
 import '../../styles/Projects.css';
 import SectionHeading from './SectionHeading';
 import ProjectGrid from './ProjectGrid';
-import ComingSoon from './ComingSoon';
 import CTASection from './CTASection';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
@@ -21,9 +20,6 @@ const Projects = () => {
 
         {/* 6 Placeholder Cards */}
         <ProjectGrid />
-
-        {/* Coming Soon Message */}
-        <ComingSoon />
 
         {/* CTA */}
         <CTASection />
