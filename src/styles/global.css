@@ -9,33 +9,33 @@
 /* ---------- CSS Variables – Light Theme ---------- */
 :root {
   /* Backgrounds */
-  --bg-primary: #f8f9ff;
-  --bg-secondary: #eef0fb;
-  --bg-card: rgba(255, 255, 255, 0.6);
-  --bg-card-hover: rgba(255, 255, 255, 0.85);
-  --bg-glass: rgba(255, 255, 255, 0.45);
-  --bg-glass-border: rgba(255, 255, 255, 0.7);
-  --bg-overlay: rgba(255, 255, 255, 0.92);
+  --bg-primary: #f0f4f9;
+  --bg-secondary: #f3f6fc;
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --bg-card-hover: rgba(255, 255, 255, 1);
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  --bg-glass-border: rgba(124, 58, 237, 0.24);
+  --bg-overlay: rgba(255, 255, 255, 0.98);
 
   /* Text */
-  --text-primary: #0d0e1a;
-  --text-secondary: #3d3f5a;
-  --text-muted: #7b7d9b;
-  --text-accent: #6c63ff;
+  --text-primary: #0a0f1d;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-accent: #7c3aed;
 
   /* Brand Gradient */
-  --gradient-primary: linear-gradient(135deg, #6c63ff 0%, #a78bfa 50%, #ec4899 100%);
-  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #6c63ff 100%);
-  --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
-  --gradient-cool: linear-gradient(135deg, #6c63ff 0%, #06b6d4 100%);
-  --gradient-text: linear-gradient(135deg, #6c63ff, #ec4899);
+  --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #0284c7 50%, #db2777 100%);
+  --gradient-secondary: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%);
+  --gradient-warm: linear-gradient(135deg, #d97706 0%, #db2777 100%);
+  --gradient-cool: linear-gradient(135deg, #7c3aed 0%, #0284c7 100%);
+  --gradient-text: linear-gradient(135deg, #7c3aed, #db2777);
 
   /* Accent Colors */
-  --accent-purple: #6c63ff;
-  --accent-pink: #ec4899;
-  --accent-cyan: #06b6d4;
-  --accent-amber: #f59e0b;
-  --accent-green: #10b981;
+  --accent-purple: #7c3aed;
+  --accent-pink: #db2777;
+  --accent-cyan: #0284c7;
+  --accent-amber: #d97706;
+  --accent-green: #059669;
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(108, 99, 255, 0.08);
@@ -74,21 +74,21 @@
 
 /* ---------- CSS Variables – Dark Theme ---------- */
 [data-theme='dark'] {
-  --bg-primary: #07080f;
-  --bg-secondary: #0d0f1e;
-  --bg-card: rgba(20, 22, 40, 0.7);
-  --bg-card-hover: rgba(28, 30, 54, 0.9);
-  --bg-glass: rgba(15, 17, 30, 0.65);
-  --bg-glass-border: rgba(108, 99, 255, 0.2);
-  --bg-overlay: rgba(7, 8, 15, 0.92);
+  --bg-primary: #06070c;
+  --bg-secondary: rgba(14, 18, 32, 0.88);
+  --bg-card: rgba(13, 17, 30, 0.82);
+  --bg-card-hover: rgba(20, 25, 44, 0.95);
+  --bg-glass: rgba(13, 17, 30, 0.75);
+  --bg-glass-border: rgba(168, 85, 247, 0.25);
+  --bg-overlay: rgba(6, 7, 12, 0.95);
 
-  --text-primary: #eef0ff;
-  --text-secondary: #b8bcd8;
-  --text-muted: #6b6e90;
-  --text-accent: #a78bfa;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-accent: #a855f7;
 
-  --gradient-primary: linear-gradient(135deg, #7c6fff 0%, #b8a3ff 50%, #f472b6 100%);
-  --gradient-text: linear-gradient(135deg, #a78bfa, #f472b6);
+  --gradient-primary: linear-gradient(135deg, #a855f7 0%, #00f0ff 50%, #ec4899 100%);
+  --gradient-text: linear-gradient(135deg, #00f0ff, #a855f7);
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
