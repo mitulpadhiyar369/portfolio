@@ -478,6 +478,10 @@
     display: none;
   }
 
+  .mobile-resume-btn {
+    display: inline-flex !important;
+  }
+
   .hamburger {
     display: flex;
   }

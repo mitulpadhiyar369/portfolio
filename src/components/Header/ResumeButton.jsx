@@ -1,14 +1,14 @@
 // ResumeButton Component
-// Opens resume PDF in a new browser tab with premium gradient button
+// Opens resume in a new browser tab with premium gradient button
 import React from 'react';
 import { FiExternalLink } from 'react-icons/fi';
+import resumeFile from '../../assets/resume.jpg';
 
-// Replace href="#" with your actual Google Drive or hosted resume PDF link
-const ResumeButton = () => {
+const ResumeButton = ({ className = 'resume-btn' }) => {
   return (
     <a
-      href="#"
-      className="resume-btn"
+      href={resumeFile}
+      className={className}
       aria-label="View Resume"
       title="View Resume"
       target="_blank"

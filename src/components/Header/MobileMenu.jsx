@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { FiX, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import Logo from './Logo';
+import ResumeButton from './ResumeButton';
 
 const NAV_ITEMS = ['Home', 'About', 'Projects', 'Technologies', 'Contact'];
 
@@ -74,6 +75,7 @@ const MobileMenu = ({ isOpen, onClose, activeSection }) => {
         </ul>
 
         <div className="mobile-nav-footer">
+          <ResumeButton className="resume-btn mobile-resume-btn" />
           <div className="mobile-social">
             <a href="https://github.com/mitulpadhiyar369" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
               <FiGithub />
