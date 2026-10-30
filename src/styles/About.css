@@ -306,12 +306,28 @@
   }
 }
 
-@media (max-width: 600px) {
-  .about-header {
-    margin-bottom: 48px;
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 0 60px;
   }
 
+  .about-header {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 600px) {
   .highlight-cards {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 30px 0 50px;
+  }
+
+  .about-header {
+    margin-bottom: 28px;
   }
 }

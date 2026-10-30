@@ -21,25 +21,14 @@ const Hero = () => {
         {/* Left: Content */}
         <HeroContent />
 
-        {/* Right: Profile Photo with orbital rings */}
+        {/* Right: Profile Photo */}
         <div className="hero-right" aria-label="Profile photo of Mitul Padhiyar">
-          <div className="hero-right-decoration">
-            {/* Orbital ring 1 with dot */}
-            <div className="hero-deco-ring hero-deco-ring-1">
-              <div className="hero-deco-dot" />
-            </div>
-            {/* Orbital ring 2 */}
-            <div className="hero-deco-ring hero-deco-ring-2" />
-            {/* Orbital ring 3 */}
-            <div className="hero-deco-ring hero-deco-ring-3" />
-            {/* Profile Photo – replaces the MP text avatar */}
-            <div className="hero-deco-center hero-profile-wrap">
-              <img
-                src={profilePhoto}
-                alt="Mitul Padhiyar – Web Developer"
-                className="hero-profile-img"
-              />
-            </div>
+          <div className="hero-image-wrapper">
+            <img
+              src={profilePhoto}
+              alt="Mitul Padhiyar – Web Developer"
+              className="hero-profile-img"
+            />
           </div>
         </div>
       </div>
