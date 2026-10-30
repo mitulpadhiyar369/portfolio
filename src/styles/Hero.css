@@ -149,10 +149,16 @@
 .hero-buttons {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeInUp 0.7s ease 0.95s forwards;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  padding: 13px 24px;
+  font-size: 0.92rem;
 }
 
 /* ---------- Right Side: Profile Image ---------- */
