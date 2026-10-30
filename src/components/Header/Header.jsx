@@ -12,7 +12,7 @@ import { FiMenu } from 'react-icons/fi';
 
 const SECTIONS = ['home', 'about', 'projects', 'technologies', 'contact'];
 
-const Header = ({ theme, onThemeToggle }) => {
+const Header = ({ theme, onThemeToggle, onResumeOpen }) => {
   const [isHidden, setIsHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -76,7 +76,7 @@ const Header = ({ theme, onThemeToggle }) => {
         {/* Right: Social + Resume + Theme */}
         <div className="header-right">
           <SocialLinks />
-          <ResumeButton />
+          <ResumeButton onResumeOpen={onResumeOpen} />
           <ThemeToggle theme={theme} onToggle={onThemeToggle} />
           <button
             className="hamburger"
@@ -94,6 +94,7 @@ const Header = ({ theme, onThemeToggle }) => {
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
         activeSection={activeSection}
+        onResumeOpen={onResumeOpen}
       />
     </>
   );

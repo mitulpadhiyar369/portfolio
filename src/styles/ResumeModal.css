@@ -1,0 +1,330 @@
+/* ===================================================
+   ResumeModal.css — Professional Resume Preview Modal
+   Light-mode A4 white card over dark blurred backdrop
+   =================================================== */
+
+/* ── Overlay ─────────────────────────────────────── */
+.resume-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+
+/* ── Modal Card ──────────────────────────────────── */
+.resume-modal-card {
+  background: #ffffff;
+  color: #1e293b;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+  margin: auto;
+  /* allow internal scrolling if needed on very small screens */
+}
+
+/* ── Close Button ────────────────────────────────── */
+.resume-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1e293b;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.resume-modal-close:hover {
+  background: #0f172a;
+  transform: scale(1.1);
+}
+
+/* ── Resume Body ─────────────────────────────────── */
+.resume-body {
+  padding: 48px 44px 36px;
+}
+
+/* ── Header ──────────────────────────────────────── */
+.resume-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resume-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 2px;
+  margin: 0 0 4px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.resume-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d9488; /* teal */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.resume-location {
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 0 0 10px;
+}
+
+.resume-contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.resume-contacts a {
+  color: #1e3a5f;
+  text-decoration: none;
+  font-weight: 500;
+}
+.resume-contacts a:hover {
+  text-decoration: underline;
+}
+
+.resume-divider {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ── Sections ────────────────────────────────────── */
+.resume-section {
+  margin-bottom: 18px;
+}
+
+/* Section heading row: h2 + horizontal rule */
+.resume-section-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.resume-section-heading h2 {
+  font-size: 10px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  padding-right: 0;
+}
+
+.resume-section-line {
+  flex: 1;
+  height: 1.5px;
+  background: #334155;
+  margin-left: 12px;
+}
+
+/* ── Body Text ───────────────────────────────────── */
+.resume-text {
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Skills List ─────────────────────────────────── */
+.resume-skills-list p {
+  font-size: 13px;
+  color: #334155;
+  margin: 3px 0;
+  line-height: 1.5;
+}
+
+.resume-skills-list p strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* ── Project Title ───────────────────────────────── */
+.resume-project-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0d9488; /* teal */
+  margin: 0 0 5px;
+}
+
+/* ── Bullet Lists ────────────────────────────────── */
+.resume-bullets {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 0;
+}
+
+.resume-bullets li {
+  font-size: 12.5px;
+  color: #334155;
+  margin-bottom: 3px;
+  line-height: 1.55;
+}
+
+/* ── Education ───────────────────────────────────── */
+.resume-edu-degree {
+  font-size: 13px;
+  color: #0f172a;
+  margin: 0 0 3px;
+}
+
+/* ── Additional Information — two columns ────────── */
+.resume-additional-grid {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+}
+
+.resume-additional-divider {
+  width: 1px;
+  background: #94a3b8;
+  align-self: stretch;
+  margin: 0 24px;
+  flex-shrink: 0;
+}
+
+/* ── Download Button Area ────────────────────────── */
+.resume-download-wrap {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 20px;
+}
+
+.resume-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1d73b8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  letter-spacing: 0.3px;
+}
+
+.resume-download-btn:hover {
+  background: #155f9e;
+  transform: translateY(-1px);
+}
+
+.resume-download-btn:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE — Tablet (≤768px)
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .resume-modal-overlay {
+    padding: 20px 12px;
+  }
+
+  .resume-body {
+    padding: 40px 28px 28px;
+  }
+
+  .resume-name {
+    font-size: 21px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE — Mobile (≤480px)
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .resume-modal-overlay {
+    padding: 10px 8px;
+    align-items: flex-start;
+  }
+
+  .resume-modal-card {
+    border-radius: 12px;
+  }
+
+  .resume-body {
+    padding: 36px 18px 22px;
+  }
+
+  .resume-name {
+    font-size: 18px;
+    letter-spacing: 1.2px;
+  }
+
+  .resume-title {
+    font-size: 11px;
+  }
+
+  .resume-contacts {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .resume-section-heading h2 {
+    font-size: 9px;
+  }
+
+  .resume-text,
+  .resume-skills-list p,
+  .resume-bullets li {
+    font-size: 12px;
+  }
+
+  .resume-project-title {
+    font-size: 12.5px;
+  }
+
+  .resume-additional-grid {
+    flex-direction: column;
+  }
+
+  .resume-additional-divider {
+    width: 100%;
+    height: 1px;
+    margin: 10px 0;
+    align-self: auto;
+  }
+
+  .resume-download-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+
+  .resume-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+}

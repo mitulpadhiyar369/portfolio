@@ -7,7 +7,7 @@ import ResumeButton from './ResumeButton';
 
 const NAV_ITEMS = ['Home', 'About', 'Projects', 'Technologies', 'Contact'];
 
-const MobileMenu = ({ isOpen, onClose, activeSection }) => {
+const MobileMenu = ({ isOpen, onClose, activeSection, onResumeOpen }) => {
   // Prevent body scroll when menu open
   useEffect(() => {
     if (isOpen) {
@@ -75,7 +75,7 @@ const MobileMenu = ({ isOpen, onClose, activeSection }) => {
         </ul>
 
         <div className="mobile-nav-footer">
-          <ResumeButton className="resume-btn mobile-resume-btn" />
+          <ResumeButton className="resume-btn mobile-resume-btn" onResumeOpen={() => { onResumeOpen?.(); onClose(); }} />
           <div className="mobile-social">
             <a href="https://github.com/mitulpadhiyar369" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
               <FiGithub />

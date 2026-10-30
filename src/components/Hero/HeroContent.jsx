@@ -4,7 +4,7 @@ import React from 'react';
 import TypingText from './TypingText';
 import HeroButtons from './HeroButtons';
 
-const HeroContent = () => {
+const HeroContent = ({ onResumeOpen }) => {
   return (
     <div className="hero-left">
       {/* Welcome greeting */}
@@ -34,7 +34,7 @@ const HeroContent = () => {
       </p>
 
       {/* CTA Buttons */}
-      <HeroButtons />
+      <HeroButtons onResumeOpen={onResumeOpen} />
     </div>
   );
 };

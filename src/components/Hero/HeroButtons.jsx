@@ -2,9 +2,8 @@
 // Primary "View Projects", Secondary "Resume", and "Contact Me" CTA buttons
 import React from 'react';
 import { FiArrowRight, FiDownload, FiMail } from 'react-icons/fi';
-import resumeFile from '../../assets/resume.jpg';
 
-const HeroButtons = () => {
+const HeroButtons = ({ onResumeOpen }) => {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -23,18 +22,17 @@ const HeroButtons = () => {
         <FiArrowRight aria-hidden="true" />
       </button>
 
-      {/* 2nd button: Resume */}
-      <a
-        href={resumeFile}
+      {/* 2nd button: Resume — opens modal */}
+      <button
         className="btn-secondary"
-        target="_blank"
-        rel="noopener noreferrer"
+        onClick={onResumeOpen}
         aria-label="View and download my resume"
         id="hero-resume-btn"
+        type="button"
       >
         <FiDownload aria-hidden="true" />
         Resume
-      </a>
+      </button>
 
       {/* 3rd button: Contact Me */}
       <button

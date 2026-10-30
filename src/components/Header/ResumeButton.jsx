@@ -1,22 +1,20 @@
 // ResumeButton Component
-// Opens resume in a new browser tab with premium gradient button
+// Triggers the Resume Preview Modal when clicked
 import React from 'react';
 import { FiExternalLink } from 'react-icons/fi';
-import resumeFile from '../../assets/resume.jpg';
 
-const ResumeButton = ({ className = 'resume-btn' }) => {
+const ResumeButton = ({ className = 'resume-btn', onResumeOpen }) => {
   return (
-    <a
-      href={resumeFile}
+    <button
       className={className}
+      onClick={onResumeOpen}
       aria-label="View Resume"
       title="View Resume"
-      target="_blank"
-      rel="noopener noreferrer"
+      type="button"
     >
       <FiExternalLink size={14} />
       Resume
-    </a>
+    </button>
   );
 };
 

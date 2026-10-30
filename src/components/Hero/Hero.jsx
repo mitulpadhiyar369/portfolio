@@ -6,7 +6,7 @@ import profilePhoto from '../../assets/profile-photo.jpg';
 
 
 
-const Hero = () => {
+const Hero = ({ onResumeOpen }) => {
   return (
     <section id="home" className="hero" aria-label="Hero section">
       {/* Background blobs */}
@@ -19,7 +19,7 @@ const Hero = () => {
       {/* Main Content Grid */}
       <div className="hero-container">
         {/* Left: Content */}
-        <HeroContent />
+        <HeroContent onResumeOpen={onResumeOpen} />
 
         {/* Right: Profile Photo */}
         <div className="hero-right" aria-label="Profile photo of Mitul Padhiyar">
