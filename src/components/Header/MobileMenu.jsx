@@ -8,15 +8,25 @@ import ResumeButton from './ResumeButton';
 const NAV_ITEMS = ['Home', 'About', 'Projects', 'Technologies', 'Contact'];
 
 const MobileMenu = ({ isOpen, onClose, activeSection, onResumeOpen }) => {
-  // Prevent body scroll when menu open
+  // Prevent body scroll when menu open & handle Escape key
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
     } else {
       document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = ''; };
-  }, [isOpen]);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   const handleNavClick = (item) => {
     const sectionId = item.toLowerCase();
@@ -36,7 +46,7 @@ const MobileMenu = ({ isOpen, onClose, activeSection, onResumeOpen }) => {
     <>
       {/* Overlay */}
       <div
-        className={`mobile-menu-overlay ${isOpen ? 'open' : ''}`}
+        className={`mobile-overlay mobile-menu-overlay ${isOpen ? 'open' : ''}`}
         onClick={onClose}
         aria-hidden="true"
       />

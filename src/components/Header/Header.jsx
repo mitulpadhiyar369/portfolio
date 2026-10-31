@@ -8,7 +8,7 @@ import SocialLinks from './SocialLinks';
 import ResumeButton from './ResumeButton';
 import ThemeToggle from './ThemeToggle';
 import MobileMenu from './MobileMenu';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const SECTIONS = ['home', 'about', 'projects', 'technologies', 'contact'];
 
@@ -19,8 +19,20 @@ const Header = ({ theme, onThemeToggle, onResumeOpen }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const lastScrollY = useRef(0);
 
-  // Hide on scroll down / show on scroll up
+  // Auto-close mobile menu on desktop resize (>900px)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900 && mobileOpen) {
+        setMobileOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileOpen]);
+
+  // Hide on scroll down / show on scroll up (never hide while mobile menu is open)
   const handleScroll = useCallback(() => {
+    if (mobileOpen) return;
     const current = window.scrollY;
     if (current > lastScrollY.current && current > 100) {
       setIsHidden(true);
@@ -29,7 +41,7 @@ const Header = ({ theme, onThemeToggle, onResumeOpen }) => {
     }
     setIsScrolled(current > 20);
     lastScrollY.current = current;
-  }, []);
+  }, [mobileOpen]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -57,12 +69,13 @@ const Header = ({ theme, onThemeToggle, onResumeOpen }) => {
   const scrollToHome = () => {
     const el = document.getElementById('home');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (mobileOpen) setMobileOpen(false);
   };
 
   return (
     <>
       <header
-        className={`header ${isHidden ? 'hidden' : ''} ${isScrolled ? 'scrolled' : ''}`}
+        className={`header ${isHidden && !mobileOpen ? 'hidden' : ''} ${isScrolled ? 'scrolled' : ''}`}
         role="banner"
       >
         {/* Left: Logo */}
@@ -80,11 +93,11 @@ const Header = ({ theme, onThemeToggle, onResumeOpen }) => {
           <ThemeToggle theme={theme} onToggle={onThemeToggle} />
           <button
             className="hamburger"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open navigation menu"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileOpen}
           >
-            <FiMenu />
+            {mobileOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
       </header>
