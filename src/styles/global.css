@@ -257,6 +257,7 @@ ol {
   color: var(--text-secondary);
   max-width: 600px;
   line-height: 1.8;
+  text-align: justify;
 }
 
 /* ---------- Glass Card Utility ---------- */

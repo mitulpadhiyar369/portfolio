@@ -1,6 +1,6 @@
 // ContactForm – Premium contact form with floating labels
 import React, { useState } from 'react';
-import { FiSend } from 'react-icons/fi';
+import { FiSend, FiCheckCircle } from 'react-icons/fi';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +30,7 @@ const ContactForm = () => {
 
       {submitted ? (
         <div style={{ textAlign: 'center', padding: '48px 0' }}>
-          <span style={{ fontSize: '2.5rem' }}>✅</span>
+          <FiCheckCircle style={{ fontSize: '2.5rem', color: 'var(--accent-green)', display: 'inline-block' }} />
           <p style={{ marginTop: '16px', fontWeight: 600, color: 'var(--accent-green)', fontSize: '1.1rem' }}>
             Message sent!
           </p>

@@ -1,11 +1,12 @@
 // HighlightCards Component – Personal details cards
 import React from 'react';
+import { LuGraduationCap, LuSchool, LuTrendingUp, LuMapPin } from 'react-icons/lu';
 
 const highlights = [
-  { icon: '🎓', label: 'Education', value: 'B.Sc. Computer Science' },
-  { icon: '🏫', label: 'College', value: 'M.B. Patel Science College, Anand' },
-  { icon: '📊', label: 'Current CGPA', value: '8.27 / 10' },
-  { icon: '🌍', label: 'Location', value: 'India' },
+  { icon: <LuGraduationCap />, label: 'Education', value: 'B.Sc. Computer Science' },
+  { icon: <LuSchool />, label: 'College', value: 'M.B. Patel Science College, Anand' },
+  { icon: <LuTrendingUp />, label: 'Current CGPA', value: '8.27 / 10' },
+  { icon: <LuMapPin />, label: 'Location', value: 'India' },
 ];
 
 const HighlightCards = () => {

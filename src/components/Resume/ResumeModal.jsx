@@ -1,7 +1,7 @@
 // ResumeModal Component
 // Professional resume preview with dark backdrop, blur, close button, and PDF download
 import React, { useEffect, useRef } from 'react';
-import { FiX, FiDownload } from 'react-icons/fi';
+import { FiX, FiDownload, FiPhone, FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
 import '../../styles/ResumeModal.css';
 import resumePdf from '../../assets/Mitul_Padhiyar_Resume.pdf';
 
@@ -68,20 +68,20 @@ const ResumeModal = ({ isOpen, onClose }) => {
             <p className="resume-title">WEB DEVELOPER</p>
             <p className="resume-location">Anand, Gujarat, India</p>
             <div className="resume-contacts">
-              <span>📞 +91 92741 18773</span>
+              <span><FiPhone size={13} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> +91 92741 18773</span>
               <span className="resume-divider">|</span>
-              <span>✉ mitulpadhiyar0369@gmail.com</span>
+              <span><FiMail size={13} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> mitulpadhiyar0369@gmail.com</span>
             </div>
             <div className="resume-contacts">
               <span>
                 <a href="https://linkedin.com/in/mitul-padhiyar" target="_blank" rel="noopener noreferrer">
-                  in linkedin.com/in/mitul-padhiyar
+                  <FiLinkedin size={13} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> linkedin.com/in/mitul-padhiyar
                 </a>
               </span>
               <span className="resume-divider">|</span>
               <span>
                 <a href="https://github.com/mitulpadhiyar369" target="_blank" rel="noopener noreferrer">
-                  ⬡ github.com/mitulpadhiyar369
+                  <FiGithub size={13} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> github.com/mitulpadhiyar369
                 </a>
               </span>
             </div>

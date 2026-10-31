@@ -1,10 +1,11 @@
 // ComingSoon – Message below the project grid
 import React from 'react';
+import { LuWrench } from 'react-icons/lu';
 
 const ComingSoon = () => {
   return (
     <div className="coming-soon-section fade-up">
-      <span className="coming-soon-emoji" aria-hidden="true">🛠️</span>
+      <span className="coming-soon-emoji" aria-hidden="true"><LuWrench /></span>
       <h3 className="coming-soon-title">Projects in the Making</h3>
       <p className="coming-soon-text">
         I'm actively building projects that blend creativity with modern web technologies —

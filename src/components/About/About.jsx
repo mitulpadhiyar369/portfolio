@@ -4,6 +4,7 @@ import '../../styles/About.css';
 import AboutContent from './AboutContent';
 import JourneyTimeline from './JourneyTimeline';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
+import { LuRocket } from 'react-icons/lu';
 
 const About = () => {
   useScrollAnimation();
@@ -42,7 +43,7 @@ const About = () => {
               <span className="code-line">  <span className="code-var">passion</span>: <span className="code-string">"Building the Web"</span>,</span>
               <span className="code-line">  <span className="code-var">isLearning</span>: <span className="code-keyword">true</span>,</span>
               <span className="code-line">{'}'}</span>
-              <span className="code-line code-comment">// Always growing 🚀</span>
+              <span className="code-line code-comment">// Always growing <LuRocket style={{ display: 'inline', verticalAlign: 'middle', marginBottom: '2px' }} /></span>
             </div>
           </div>
         </div>

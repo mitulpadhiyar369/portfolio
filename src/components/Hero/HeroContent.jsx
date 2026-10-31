@@ -3,13 +3,14 @@
 import React from 'react';
 import TypingText from './TypingText';
 import HeroButtons from './HeroButtons';
+import { LuSparkles } from 'react-icons/lu';
 
 const HeroContent = ({ onResumeOpen }) => {
   return (
     <div className="hero-left">
       {/* Welcome greeting */}
       <p className="hero-welcome" aria-label="Hello greeting">
-        <span className="hero-wave" aria-hidden="true">👋</span>
+        <span className="hero-wave" aria-hidden="true"><LuSparkles /></span>
         Hello, I'm
       </p>
 

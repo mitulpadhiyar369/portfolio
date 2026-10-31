@@ -26,6 +26,7 @@
 .contact-header .section-subtitle {
   margin: 0 auto;
   max-width: 620px;
+  text-align: justify;
 }
 
 /* ---------- Two-column grid ---------- */
@@ -154,6 +155,7 @@
   font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.7;
+  text-align: justify;
 }
 
 /* ---------- Right: Contact Form ---------- */

@@ -46,7 +46,11 @@
 }
 
 .hero-wave {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-cyan);
+  font-size: 1.15rem;
   animation: wave 2.5s ease-in-out infinite;
   transform-origin: 70% 70%;
 }
@@ -141,6 +145,7 @@
   color: var(--text-secondary);
   line-height: 1.85;
   max-width: 520px;
+  text-align: justify;
   opacity: 0;
   animation: fadeInUp 0.7s ease 0.85s forwards;
 }
